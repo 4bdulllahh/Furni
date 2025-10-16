@@ -167,8 +167,25 @@ a.more {
   margin-bottom: 30px;
 }
 
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(2);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(2);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px) scale(2);
+  }
+  75% {
+    transform: translateY(-25px) translateX(5px) scale(2);
+  }
+}
+
 .hero .hero-img-wrap {
   position: relative;
+  overflow: visible;
 }
 
 .hero .hero-img-wrap img {
@@ -176,49 +193,35 @@ a.more {
   top: 0;
   right: 0;
   z-index: 2;
-  max-width: 780px;
+  max-width: 1560px;
   left: -20px;
+  animation: float 6s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .hero .hero-img-wrap img {
-    right: 0;
-    left: -100px;
+    right: -100px;
+    left: auto;
+    max-width: 1560px;
   }
 }
 
 @media (min-width: 992px) {
   .hero .hero-img-wrap img {
-    left: 0;
-    top: -80px;
+    left: auto;
+    top: -120px;
     position: absolute;
-    right: -50px;
+    right: -200px;
+    max-width: 1600px;
   }
 }
 
 @media (min-width: 1200px) {
   .hero .hero-img-wrap img {
-    left: 0;
-    top: -80px;
-    right: -100px;
-  }
-}
-
-.hero .hero-img-wrap:after {
-  content: "";
-  position: absolute;
-  width: 255px;
-  height: 217px;
-  background-image: url("../images/dots-light.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  right: -100px;
-  top: 0;
-}
-
-@media (min-width: 1200px) {
-  .hero .hero-img-wrap:after {
-    top: -40px;
+    left: auto;
+    top: -140px;
+    right: -250px;
+    max-width: 1800px;
   }
 }
 
